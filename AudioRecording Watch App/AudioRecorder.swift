@@ -15,7 +15,6 @@ class AudioRecorder: ObservableObject {
     
     @Published var recording: Bool = false
     let audioSession = AVAudioSession.sharedInstance()
-    let url = URL(fileURLWithPath: "/dev/null", isDirectory: true)
     let recorderSettings: [String:Any] = [
         AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
         AVSampleRateKey: 48000.0,
@@ -24,6 +23,16 @@ class AudioRecorder: ObservableObject {
     ]
     
     init() {
+        
+        func getDocumentsDirectory() -> URL {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            return paths[0]
+        }
+        
+        // Audio URLS Section
+        let url = getDocumentsDirectory().appendingPathComponent("recording.m4a") // Save as .../recording.m4a
+//        let url = URL(fileURLWithPath: "/dev/null", isDirectory: true) // Not save
+        
         // Ask for permission for the mic from the user. This is registered in the info.plit file.
         if AVAudioApplication.shared.recordPermission != .granted {
             AVAudioApplication.requestRecordPermission { (isGranted) in
