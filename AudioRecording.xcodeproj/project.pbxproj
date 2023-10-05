@@ -12,6 +12,7 @@
 		7D27ED1F2ACE94B700953E76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27ED1E2ACE94B700953E76 /* ContentView.swift */; };
 		7D27ED212ACE94B900953E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D27ED202ACE94B900953E76 /* Assets.xcassets */; };
 		7D27ED242ACE94B900953E76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D27ED232ACE94B900953E76 /* Preview Assets.xcassets */; };
+		7D27ED2F2ACECDC300953E76 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27ED2E2ACECDC300953E76 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		7D27ED1E2ACE94B700953E76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D27ED202ACE94B900953E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D27ED232ACE94B900953E76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7D27ED2E2ACECDC300953E76 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				7D27ED1C2ACE94B700953E76 /* AudioRecordingApp.swift */,
 				7D27ED1E2ACE94B700953E76 /* ContentView.swift */,
+				7D27ED2E2ACECDC300953E76 /* AudioRecorder.swift */,
 				7D27ED202ACE94B900953E76 /* Assets.xcassets */,
 				7D27ED222ACE94B900953E76 /* Preview Content */,
 			);
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D27ED2F2ACECDC300953E76 /* AudioRecorder.swift in Sources */,
 				7D27ED1F2ACE94B700953E76 /* ContentView.swift in Sources */,
 				7D27ED1D2ACE94B700953E76 /* AudioRecordingApp.swift in Sources */,
 			);
@@ -334,6 +338,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AudioRecording;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,6 +369,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = AudioRecording;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
