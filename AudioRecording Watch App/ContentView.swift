@@ -21,7 +21,7 @@ struct ContentView: View {
                 Image(systemName:"mic.fill.badge.plus")
                     .resizable()
                     .scaledToFill()
-                    .foregroundStyle(self.audioRecorder.recording ? .red: .green)
+                    .foregroundStyle(self.audioRecorder.recording ? .green: .red)
                     .frame(width: 35, height: 35)
             }
             Text(audioRecorder.recording ? "Recording.." : "Record")

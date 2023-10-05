@@ -14,19 +14,16 @@ class AudioRecorder: ObservableObject {
     private var audioRecorder: AVAudioRecorder
     
     @Published var recording: Bool = false
+    let audioSession = AVAudioSession.sharedInstance()
+    let url = URL(fileURLWithPath: "/dev/null", isDirectory: true)
+    let recorderSettings: [String:Any] = [
+        AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
+        AVSampleRateKey: 48000.0,
+        AVNumberOfChannelsKey: 1,
+        AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue
+    ]
     
     init() {
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        let audioApplication = AVAudioApplication.shared
-        let url = URL(fileURLWithPath: "/dev/null", isDirectory: true)
-        let recorderSettings: [String:Any] = [
-            AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
-            AVSampleRateKey: 48000.0,
-            AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue
-        ]
-        
         // Ask for permission for the mic from the user. This is registered in the info.plit file.
         if AVAudioApplication.shared.recordPermission != .granted {
             AVAudioApplication.requestRecordPermission { (isGranted) in
